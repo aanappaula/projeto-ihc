@@ -11,7 +11,7 @@ from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
 
 
 OUTPUT_PATH = Path(__file__).parent
-ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\1144008644\Downloads\Tkinter-Designer-IHC-ALPC\build\assets\frame0")
+ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\1144008644\Downloads\projeto-ihc\Tkinter-Designer-IHC-ALPC\build\assets\frame0")
 
 
 def relative_to_assets(path: str) -> Path:
@@ -51,13 +51,34 @@ image_2 = canvas.create_image(
     image=image_image_2
 )
 
-canvas.create_rectangle(
-    64.0,
+entry_image_1 = PhotoImage(
+    file=relative_to_assets("entry_1.png"))
+entry_bg_1 = canvas.create_image(
+    215.5,
+    400.5,
+    image=entry_image_1
+)
+entry_1 = Text(
+    bd=0,
+    bg="#FFFFFF",
+    fg="#000716",
+    highlightthickness=0
+)
+entry_1.place(
+    x=84.0,
+    y=376.0,
+    width=263.0,
+    height=47.0
+)
+
+canvas.create_text(
+    75.0,
     361.0,
-    367.0,
-    425.0,
+    anchor="nw",
+    text="E-mail",
     fill="#000000",
-    outline="")
+    font=("Inter", 12 * -1)
+)
 
 button_image_1 = PhotoImage(
     file=relative_to_assets("button_1.png"))
@@ -77,10 +98,28 @@ button_1.place(
 
 canvas.create_rectangle(
     64.0,
-    471.0,
+    486.0,
     367.0,
-    586.0,
-    fill="#000000",
+    535.0,
+    fill="#FFFFFF",
     outline="")
+
+canvas.create_text(
+    75.0,
+    471.0,
+    anchor="nw",
+    text="Senha",
+    fill="#000000",
+    font=("Inter", 12 * -1)
+)
+
+canvas.create_text(
+    223.0,
+    521.0,
+    anchor="nw",
+    text="Esqueceu sua senha?",
+    fill="#000000",
+    font=("Inter", 13 * -1)
+)
 window.resizable(False, False)
 window.mainloop()
