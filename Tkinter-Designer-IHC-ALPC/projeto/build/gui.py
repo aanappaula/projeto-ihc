@@ -11,12 +11,20 @@ from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
 
 
 OUTPUT_PATH = Path(__file__).parent
-ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\1144008644\Downloads\projeto-ihc\Tkinter-Designer-IHC-ALPC\projeto\build\assets\frame0")
+ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\1144008644\Documents\projeto-ihc\Tkinter-Designer-IHC-ALPC\projeto\build\assets\frame0")
 
 
 def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
 
+def acessar():
+    usuario = entry_1.get()
+    senha = entry_2.get()
+    
+    if usuario == "aluno" and senha == "123":
+        print("Logou!Bem vindo!")
+    else:
+        print("Login inválida!")
 
 window = Tk()
 
@@ -62,7 +70,7 @@ entry_1.place(
     width=263.0,
     height=47.0
 )
-
+#entry_1.config(***)
 canvas.create_text(
     75.0,
     361.0,
@@ -78,7 +86,8 @@ button_1 = Button(
     image=button_image_1,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: print("button_1 clicked"),
+    #command=lambda: print("button_1 clicked"),
+    command=acessar,
     relief="flat"
 )
 button_1.place(
@@ -119,7 +128,7 @@ canvas.create_text(
 
 canvas.create_text(
     223.0,
-    521.0,
+    539.0,
     anchor="nw",
     text="Esqueceu sua senha?",
     fill="#000000",
